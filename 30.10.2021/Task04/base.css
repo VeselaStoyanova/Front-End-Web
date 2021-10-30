@@ -1,0 +1,59 @@
+/*Задание
+Нека имаме 2 div елемента (първият с ID #container1, а вторият с ID #container2), които съдържат някакъв текст. Тези 2 div-a са поставени в контейнер и трябва запълнят пространството в контейнера, като изпълнят следните изисквания:
+
+#container1:
+
+Да има padding 5px от всички страни.
+Да има margin 5px от всички страни.
+Да има border със следните стойности:
+дебелина: 5px
+плътност: solid
+цвят: #5b4000
+Крайните размери на box-model-a трябва да бъдат 400px ширина и 100px виосчина.
+#container2:
+
+Да има padding 5px от всички страни.
+Да има border със следните стойности:
+дебелина: 5px
+плътност: solid
+цвят: #0e5252
+Крайните размери на box-model-a трябва да бъдат 400px ширина и 100px виосчина.
+Внимание! този контейнер има предварително зададена ширина от 100%. Property-то width да не се предефинира.*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffe1b6;
+}
+
+#sandbox {
+    display: block;
+    width: 400px;
+    height: 200px;
+    background-color: #ffffff;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 200px);
+    overflow: hidden;
+}
+
+#container1 {
+    background-color: #996b00;
+    color: #ffffff;
+    padding: 5px;
+    margin: 5px;
+    border: 5px solid #5b4000;
+    box-sizing: border-box;
+    width: 390px;
+    height: 100px;
+}
+
+#container2 {
+    width: 100%;
+    background-color: #168282;
+    color: #ffffff;
+    padding: 5px;
+    border: 5px solid #0e5252;
+    box-sizing: border-box;
+    height: 90px;
+}

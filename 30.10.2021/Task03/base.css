@@ -1,0 +1,115 @@
+#editor {
+    display: block;
+    width: 900px;
+    border: 1px solid #c3c3c3;
+    margin: 50px auto 0 auto;
+}
+
+#editor-text-container {
+    height: 600px;
+    overflow: auto;
+    padding: 0 15px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+#editor-buttons {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+}
+
+#text-div {
+    font-weight: bold;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+}
+
+#text-div {
+    display: block;
+}
+
+
+/*Първият ред на всеки параграф трябва да започва 10px навътре.*/
+
+p {
+    text-indent: 10px;
+    /*За да изглежда текста добре, би било хубаво да го подравним от двете страни.*/
+    text-align: justify;
+}
+
+
+/*Подравнете изображението с ID #logo отдясно, така че текстът да се излива около него.*/
+
+#logo {
+    float: right;
+}
+
+
+/*Подравнете изображението с ID #logo2 вляво, така че текстът да се излива около него.*/
+
+#logo2 {
+    float: left;
+}
+
+
+/*Авторът на статията по грешка е вмъкнал неподходяща картинка, а вие не можете просто да я изтриете. Mожете ли да я скриете, така че да не се вижда и да не пречи? Картинката е с ID #logo3.*/
+
+#logo3 {
+    display: none;
+}
+
+
+/*Авторът на статията по грешка е вмъкнал блоков елемент в текста и по този начин е "счупил" форматирането. Можете ли да накарате блоковият елемент да се не се държи, като блоков елемент и да не "чупи" форматирането? Елементът е с ID #text-div.*/
+
+#text-div {
+    display: inline;
+}
+
+
+/*Из текста има елемнти, който са със специално форматиране, но то не се появява. Изброени са класове, които са приложени на тези текстове. Поправете ги да изглеждат правилно:
+.strike-out - задрасква текста.
+.bold - удебелява текста.
+.underline - подчертава текста.
+.italics - прави текста наклонен.
+.uppercase - прави всички букви големи.*/
+
+.strike-out {
+    text-decoration: line-through;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+/*Искаме да направим разстоянието м/у буквите на първия параграф 2px,
+а също така и разстоянието м/у редовете му 1.5 пъти по-голямо от големината на шрифта.*/
+
+#logo+p {
+    letter-spacing: 2px;
+    line-height: 1.5em;
+}
+
+
+/*Нека да направим разстоянието м/у думите на третия параграф 10px.*/
+
+#paragraph3 {
+    word-spacing: 10px;
+}

@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 1500px;
+    background-color: #fffbe2;
+}
+
+#red,
+#green,
+#blue,
+#silver {
+    width: 350px;
+    height: 200px;
+    border: 2px solid #000000;
+}
+
+#yellow {
+    width: 75px;
+    height: 75px;
+}
+
+#red {
+    background: red;
+}
+
+#green {
+    background: green;
+}
+
+#blue {
+    background: blue;
+}
+
+#silver {
+    background-color: silver;
+}
+
+#yellow {
+    background: yellow;
+}
+
+
+/*Червеният правоъгълник да се намира на 300px отстояние отгоре и 400px отстояние отляво.*/
+
+#red {
+    margin-top: 300px;
+    margin-left: 400px;
+    position: relative;
+    /*Червеният правоъгълник да бъде върху Сивия.*/
+    z-index: 2;
+}
+
+
+/*Сивият правоъгълник да се намира на 350px отстояние отгоре и 450px отстояние отляво.*/
+
+#silver {
+    top: 350px;
+    left: 450px;
+    position: absolute;
+}
+
+
+/*Зеленият правоъгълник да се намира на 0px остояние отдясно и 100px отстояние отгоре. 
+Когато страницата се скролира, зеленият правоъгълник трябва да се скролира заедно с нея, като запази зададените отстояния.*/
+
+#green {
+    right: 0px;
+    top: 100px;
+    position: fixed;
+}
+
+
+/*Жълтият квадрат да се позиционира в долния десен ъгъл на Синия правоъгълник.*/
+
+#blue {
+    position: relative;
+}
+
+#yellow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
