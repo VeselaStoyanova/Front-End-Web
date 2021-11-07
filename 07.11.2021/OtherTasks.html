@@ -1,0 +1,121 @@
+<script>
+    "use strict";
+    let array = [3, 6, 10, 15, 17, 50];
+
+    //Task 01
+    //Напишете функция, която при подаден масив проверява
+    //Task 01.1
+    //дали съдържа числото 50?
+    function contains50(array) {
+        return array.includes(50);
+    }
+
+    console.log(contains50(array));
+
+    //Task 01.2
+    //дали сбора на елементите е равен на 50?
+    function isSum50(array) {
+        return array.reduce((a, b) => a + b) === 50;
+    }
+
+    console.log(isSum50(array));
+
+    //Task 01.3
+    //кое е числото, което трябва да се добави в към сбора, за да се получи сбор от 50?
+    function findNumberTotFifty(array) {
+        return 50 - array.reduce((a, b) => a + b);
+    }
+
+    console.log(findNumberTotFifty(array));
+
+    //Task 02
+    //Напишете функция, която намира най-често срещаната буква в текст. Ако има няколко с равен брой, върнете масив от тях.
+    function mostCommon(str) {
+        let counts = {};
+        let mostCommonLetterCount;
+
+        str.split("").forEach(letter => {
+            if (counts[letter]) {
+                counts[letter]++;
+            } else {
+                counts[letter] = 1;
+            }
+        })
+        mostCommonLetterCount = Math.max(...Object.values(counts));
+        return Object.keys(counts).filter(letter => counts[letter] === mostCommonLetterCount);
+    }
+
+    console.log(mostCommon("aaaaaaaabaa"));
+
+    //Task 03
+    //Да се намери най-дългата площадка в масив от числа.
+    //ако има две или повече равни да се върне последната
+    function longestSeq(numbers) {
+        let current = numbers[0];
+        let currCount = 0;
+        let maxNum = numbers[0];
+        let maxCount = 0;
+
+        numbers.forEach(num => {
+            if (num != current) {
+                if (currCount >= maxCount) {
+                    maxNum = current;
+                    maxCount = currCount;
+                }
+
+                current = num;
+                currCount = 1;
+            } else {
+                currCount++;
+            }
+
+            if (currCount >= maxCount) {
+                maxNum = current;
+                maxCount = currCount;
+            }
+
+        });
+        return maxNum;
+    }
+
+    console.log(longestSeq([1, 1, 2, 2, 2, 2, 3, 3, 3, 3]));
+
+    //Task 05
+    //В текст добавете пред всички думи префикс "n", ако думата вече започва с "n", не я променяйте. (not case sensitive)
+    function prefixN(str) {
+        let words = str.split(" ");
+
+        words.forEach((word, index) => {
+            if (word[0] !== "n" && word[0] !== "N") {
+                words[index] = "n" + word;
+                // word.split("").splice(0, 1, "n").join("");
+                // words[index] = word;
+            }
+        });
+
+        return words.join(" ");
+    }
+    
+    console.log(prefixN("Spain Italy Netherlands Bulgaria"));
+
+    //Task 05.1
+    // В текст променете първата буква на всички думи с префикс "n", ако думата вече започва с "n", не я променяйте. (not case sensitive)
+
+    function prefixN1(str) {
+        let words = str.split(" ");
+
+        words.forEach((word, index) => {
+            if (word[0] !== "n" && word[0] !== "N") {
+                let arr = word.split("");
+
+                arr.splice(0, 1, "n")
+
+                words[index] = arr.join("");
+            }
+        });
+
+        return words.join(" ");
+    }
+    console.log(prefixN1("Spain Italy Netherlands Bulgaria"));
+
+</script>
