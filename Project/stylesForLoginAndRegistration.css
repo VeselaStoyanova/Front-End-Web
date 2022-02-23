@@ -1,0 +1,99 @@
+body{
+    background: linear-gradient(-100deg, #57ca1a 0%, #caf1ad 100%);
+    font-family: "Serif", "Garamond";
+}
+
+.container{
+    width: 35em;
+    height: 25em;
+    margin: auto;
+    background-color: #c3f5c3;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 1em;
+}
+
+#containerLogIn{
+    height: 17em;
+}
+
+header{
+    text-align: center;
+    font-size:50px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-width: 0.15em;
+    text-decoration-color: rgb(0, 0, 0);
+    transition: text-decoration-color 300ms;
+    transition: color 200ms;
+}
+
+header:hover{
+    color: #308501;
+    text-decoration-color: #308501;
+}
+
+span{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+input{
+    border-radius: 7px;
+    margin-left: 0.4em;
+    margin-bottom: 0.3em;
+    width: 14em;
+}
+
+input:hover{
+    background-color: #e7e5e5;
+}
+
+label{
+    margin-left: -4em;
+    font-size: 20px;
+}
+
+button{
+    position: relative;
+    margin-top: 0.8em;
+    width: 12em;
+    font-family: "Serif", "Garamond";
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #308d11;
+    background-color: #57ca1a;
+}
+
+button:hover{
+    background-color: #84ea84;
+}
+
+button:active {
+    background-color: #84ea84;
+    box-shadow: 0 5px #308d11;
+    transform: translateY(4px);
+}
+
+h2{
+    font-weight: bold;
+    padding-bottom: 1em;
+    position: relative;
+    text-align: center;
+}
+
+a{
+    color:black;
+}
+
+a:hover{
+    color: #308501;
+    text-decoration-color: #308501;
+}
+
+p{
+    text-align: center;
+    font-size: 20px;
+}
