@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="registrationAndLogin.js"></script>
+    <link rel="stylesheet" href="stylesForLoginAndRegistration.css">
+    <script>
+        function saveData(){
+            let username = document.getElementById("usernameInput").value;
+
+            let password = document.getElementById('passwordInput').value;
+
+            let user_records = new Array();
+            user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+            if(user_records.some( (v) => {
+                return v.username==username && v.password==password}) && localStorage.getItem('username') == null) {
+                alert("Login Pass");
+                let current_user = user_records.filter((v) => {
+                    return v.username==username && v.password==password;
+                })[0];
+                localStorage.setItem('username',current_user.username);
+                window.location.href = "allExcursions.html";
+                return false;
+            }
+            else {
+                alert('Неуспешно влизане.');
+            }
+        }
+    </script>
+    <title>Вход</title>
+</head>
+
+<body>
+<header id="registrationHeader">Вход</header>
+<div class="container" id="containerLogIn">
+    <form onsubmit="return saveData()">
+        <div class="userInput">
+            <span class="details">Потребителско име</span>
+            <input type="text" placeholder="Въведете вашето потребителско име" id="usernameInput" required>
+        </div>
+        <div class="userInput">
+            <span class="details">Парола</span>
+            <input type="password" placeholder="Въведете парола" id="passwordInput" required>
+        </div>
+        <div class="buttonLogIn">
+            <button type="submit" value="Вход">Вход</button>
+        </div>
+        <div class="registrationLink">
+            <h2><a href="registrationForm.html">Нямате акаунт? Регистрирайте се.</a></h2>
+        </div>
+        <div>
+            <p id="result">Изчакайте....</p>
+        </div>
+    </form>
+</div>
+</body>
